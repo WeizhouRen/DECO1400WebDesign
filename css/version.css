@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Skranji');
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Skranji', cursive;
+}
+/*navigation*/
+#top {
+	background-color: #389ac4;
+	border: 2px solid #f0eff0;
+	width: 100%;
+	position: fixed;
+}
+
+#top  {
+	display: flex;
+	justify-content: space-around;
+}
+
+.link {
+	font-size: 16px;
+	padding: 1em;
+	color: white;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbutton {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 1em;
+	background-color: inherit;
+	font-family: inherit;
+}
+
+.link:hover, .dropdown:hover .dropbutton {
+	color: #389ac4;
+	transition: all 0.5s ease;
+	background-color: white;
+}
+.dropcontent {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 180px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropcontent a {
+	color: #389ac4;
+	font-family: 'Lato';
+	text-decoration: none;
+	display: block;
+}
+.dropcontent a:hover {
+	color: white;
+	background-color: lightblue;
+	transition: all 0.5s ease;
+}
+.dropdown:hover .dropcontent{
+	display: block;
+	transition: all 0.5s ease;
+}
+
+/* header */
+#title {
+	background-image:url("../images/boat.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+
+#title #h1{
+	text-align: left;
+	padding-left: 2em;
+	font-size: 30px;
+	padding-top: 10em;
+	padding-bottom: 3em;
+	color: #f0eff0;
+	text-shadow: rgba(0,0,0,0.3) 1px 3px 1px;
+}
+
+/*section*/
+#other-version {
+	display: flex;
+	background-color: #f0eff0;
+	color: #1f2820;
+	justify-content: space-around;
+	overflow: hidden;
+	padding: 4em 7em;
+}
+
+.version-element {
+	display: block;
+	margin: 2em;
+}
+.version-element .intro p {
+	font-family: 'Lato';
+	line-height: 1.7em;
+} 
+.version-element .intro {
+	padding-top: 2em;
+}
+.version-element .intro a {
+	text-decoration: none;
+	color: #389ac4;
+	font-family: 'Lato';
+}
+
+body.js #other-version .version-element .info .expand-button a {
+	color: #389ac4;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+body.js #other-version .version-element .info .expand-button a:after {
+	content: "\25BC";
+	padding-left: 0.25em;
+}
+body.js #other-version .version-element .info .intro {
+	height: 0;
+	overflow: hidden;
+	transform: all 1s ease;
+}
+
+body.js #other-version .version-element .expanded .intro {
+	height: 100%;
+}
+
+.version-element ul {
+	padding-top: 1em;
+}
+.version-element ul li {
+	list-style: none;
+	padding: 0.5em;
+}
+.version-element ul li a {
+	text-decoration: none;
+	color: #389ac4;
+}
+.version-element ul li a:hover {
+	text-decoration: underline;
+}
+
+/*footer*/
+footer {
+	background-color: white;
+	display: block;
+} 
+footer #info {
+	justify-content: space-between;
+	display: flex;
+	padding: 2em;
+}
+footer #view-sitemap {
+	padding: 1em 0;
+}
+
+footer #view-sitemap button {
+	padding: 1em;
+	border: 2px solid #389ac4;
+	border-radius: 30px;
+	text-align: center;
+	font-family: 'Lato';
+	text-transform: uppercase;
+	color: #389ac4;
+	font-size: 1.5em;
+}
+
+footer #view-sitemap #sitemap {
+	width: 100%;
+	padding: 1em 2em;
+	justify-content: space-between;
+}
+
+.not-show {
+	display: none;
+}
+.show {
+	display: block;
+	transition: all 1s ease;
+}
+
+footer #view-sitemap #sitemap .sitemap-link {
+	padding: 1em;
+}
+
+footer #view-sitemap #sitemap .map-link {
+	color: #389ac4;
+	font-family: 'Skranji';
+	font-weight: bold;
+	text-decoration: none;
+}
+footer #view-sitemap #sitemap #map-plot {
+	display: block;
+}
+footer #view-sitemap #sitemap .sub-link {
+	color: #389ac4;
+	font-family: 'Lato';
+	text-decoration: none;
+	padding-left:1em;
+	margin-top: 1em;
+}
+
+footer #view-sitemap #sitemap .map-link:hover,
+footer #view-sitemap #sitemap .sub-link:hover {
+	text-decoration: underline;
+}
+footer #logo {
+	text-decoration: none;
+}
+footer #logo h1{
+	font-size: 3em;
+	font-family: 'Lato';
+	font-weight: bolder;
+	text-align: center;
+	color: #389ac4;
+	text-shadow: rgba(0,0,0,0.3) 1px 3px 1px;
+}
+
+footer #icons {
+	display: flex;
+}
+footer .text {
+	font-family: "Lato";
+	color: #389ac4;
+}
+footer .contact {
+	width: 70px;
+	padding: 0 0.3em;
+	display: block;
+	text-align: center;
+}
+footer .icon {
+	width: 40px;
+}
+footer #copyright {
+	padding: 1em;
+}
+footer #copyright a {
+	font-family: 'Lato';
+	padding-left: 1em;
+	color: #389ac4;
+}
+footer hr {
+	margin: 0 1em;
+}
+footer p {
+	font-family: 'Lato';
+	color: #389ac4;
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 800px) {
+	#other-version {
+		display: block;
+	}
+	footer #info {
+		display: block;
+		justify-content: center;
+		margin: auto auto;
+	}
+}
+
+

@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Skranji');
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Skranji', cursive;
+}
+/*navigation*/
+#top {
+	background-color: #389ac4;
+	border: 2px solid #f0eff0;
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+}
+
+#top  {
+	display: flex;
+	justify-content: space-around;
+}
+
+.link {
+	font-size: 16px;
+	padding: 1em;
+	color: white;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbutton {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 1em;
+	background-color: inherit;
+	font-family: inherit;
+}
+
+.link:hover, .dropdown:hover .dropbutton {
+	color: #389ac4;
+	transition: all 0.5s ease;
+	background-color: white;
+}
+
+.dropcontent {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 180px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropcontent a {
+	color: #389ac4;
+	font-family: 'Lato';
+	text-decoration: none;
+	display: block;
+	transition: all 0.5s ease;
+}
+
+.dropcontent a:hover {
+	color: white;
+	background-color: lightblue;
+	transition: all 0.5s ease;
+}
+
+.dropdown:hover .dropcontent{
+	display: block;
+	transition: all 0.5s ease;
+}
+
+#menu-bar {
+	display: none;
+	margin-top: 8px;
+}
+
+#menu-bar div {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+/*sub-navigation*/
+#sub-nav {
+	padding: 3em;
+}
+
+#sub-nav p {
+	font-family: 'Lato';
+	color: #389ac4;
+}
+
+#sub-nav a {
+	font-weight: bold;
+	font-family: 'Lato';
+	color: #389ac4;
+}
+
+#choose-chapter {
+	display: none;
+}
+
+body.js #choose-chapter {
+	display: block;
+}
+
+body.js #choose-chapter .anchor {
+	width: 100px;
+}
+
+body.js #choose-chapter #anchor1 {
+	transform: rotate(20deg);
+	width: 120px;
+}
+
+@keyframes choose {
+	0% {
+		top: 30px;
+	}
+	50% {
+		top: 45px;
+	}
+	100%{
+		top: 30px;
+	}
+}
+
+body.js #choose-chapter label {
+	color: navy;
+	text-transform: uppercase;
+	position: relative;
+	animation-timing-function: linear;
+	animation-name: choose;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+body.js #choose-chapter img {
+	max-width: 100px;
+	position: relative;
+	bottom: 0;
+	animation-timing-function: linear;
+	animation-name: choose;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+/*article*/
+#whole {
+	padding-top: 5em;
+	background-image: url(../images/ocean.jpg);
+	background-position: center center;
+}
+
+#whole #content {
+	width: 80%;
+	margin: auto auto;
+	padding-bottom: 2em;
+}
+
+#whole #content .chapter {
+	border-radius: 10px;
+	background: rgba(255,255,255,0.8);
+	margin: auto auto;
+	overflow: hidden;
+	margin-bottom: 2em;
+}
+
+#content .chapter h2 {
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1.5em;
+}
+
+#content .chapter p,h2 {
+	color: darkorange;
+	font-family: 'Lato';
+	padding: 1em 2em;
+	line-height: 1.5em;
+}
+
+#content .chapter p:first-letter {
+	font-size: 1.5em;
+	font-family: 'Skranji';
+}
+
+#content .chapter {
+	overflow: hidden;
+}
+
+#content .chapter a .read-more {
+	display: none;
+}
+
+@keyframes boat {
+	0% {
+		left: -250px;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+.animation img {
+	max-width: 100px;
+	position: relative;
+	bottom: 0;
+	left: -350px;
+	animation-timing-function: linear;
+	animation-name: boat;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+}
+
+.animation img:nth-child(1) {
+	bottom: -20px;
+	transform: scaleX(-1);
+}
+
+.animation img:nth-child(2) {
+	bottom: 30px;
+	animation-direction: reverse;
+	animation-delay: 5s;
+}
+
+.animation img:nth-child(3) {
+	transform: scaleX(-1);
+	animation-delay: 10s;
+	animation-duration: 15s;
+}
+
+body.js #whole #content #chapter-2,
+body.js #whole #content #chapter-3,
+body.js #whole #content #chapter2-popup,
+body.js #whole #content #chapter3-popup  {
+	display: none;
+}
+
+body.js #whole #content .chapter a .read-more {
+	display: block;
+}
+
+#whole #content .chapter a .read-more,
+#whole #content .read-whole{
+	float: right;
+	margin: 2em;
+	padding: 0.5em;
+	border-radius: 7px;
+	font-family: 'Lato';
+	text-transform: uppercase;
+	color: #389ac4;
+	font-size: 1em;
+	padding-right: 1em;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+#whole #content .chapter a .read-more:hover,
+#whole #content .read-whole:hover{
+	background-color: lightblue;
+	color: white;
+	transition: all 0.3s ease;
+	width: 200px;
+}
+
+body.js #whole #content #without-js {
+	display: none;
+}
+
+/*article pop-up*/
+.chapter-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.75);
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.chapter-popup>article {
+	background: white;
+	margin: 5em;
+	box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+	position: relative;
+	border-radius: 5px;
+	padding: 0.5em;
+	font-family: 'Lato';
+}
+
+.popup-story {
+	padding: 1em 2em;
+	font-family: 'Lato';
+	color: darkorange;
+	line-height: 1.6em;
+}
+
+.chapter-popup .close-button {
+	padding: 1em;
+}
+
+.chapter-popup .close-button a{
+	color: darkorange;
+	font-weight: bolder;
+	text-decoration: none;
+	text-transform: uppercase;
+	position: absolute;
+}
+
+.chapter-popup .close-button a:before {
+	content: "\2716";
+	padding-right: 5px;
+}
+
+body.show-chapter-popup {
+	overflow: hidden;
+}
+
+body.show-chapter-popup .chapter-popup{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*footer*/
+footer {
+	background-color: white;
+	display: block;
+} 
+
+footer #info {
+	justify-content: space-between;
+	display: flex;
+	padding: 2em;
+}
+
+footer #view-sitemap {
+	padding: 1em 0;
+}
+
+footer #view-sitemap button {
+	cursor: pointer;
+	padding: 1em;
+	border: 2px solid darkorange;
+	border-radius: 30px;
+	text-align: center;
+	font-family: 'Lato';
+	text-transform: uppercase;
+	color: darkorange;
+	font-size: 1.5em;
+}
+
+footer #view-sitemap button:focus {
+	outline: none;
+}
+
+footer #view-sitemap #sitemap {
+	width: 100%;
+	padding: 1em 2em;
+	justify-content: space-between;
+}
+
+.not-show {
+	display: none;
+}
+
+.show {
+	display: block;
+	transition: all 1s ease;
+}
+
+footer #view-sitemap #sitemap .sitemap-link {
+	padding: 1em;
+}
+
+footer #view-sitemap #sitemap .map-link {
+	color: darkorange;
+	font-family: 'Skranji';
+	font-weight: bold;
+	text-decoration: none;
+}
+
+footer #view-sitemap #sitemap #map-plot {
+	display: block;
+}
+
+footer #view-sitemap #sitemap .sub-link {
+	color: darkorange;
+	font-family: 'Lato';
+	text-decoration: none;
+	padding-left:1em;
+	margin-top: 1em;
+}
+
+footer #view-sitemap #sitemap .map-link:hover,
+footer #view-sitemap #sitemap .sub-link:hover {
+	text-decoration: underline;
+}
+
+footer #logo {
+	text-decoration: none;
+}
+
+footer #logo h1{
+	font-size: 3em;
+	font-family: 'Lato';
+	font-weight: bolder;
+	text-align: center;
+	color: darkorange;
+	text-shadow: rgba(0,0,0,0.3) 1px 3px 1px;
+}
+
+footer #icons {
+	display: flex;
+}
+
+footer .text {
+	font-family: "Lato";
+	color: darkorange;
+	text-decoration: none;
+}
+
+footer .text:hover {
+	text-decoration: underline;
+	font-weight: bolder;
+}
+
+footer .contact {
+	width: 70px;
+	padding: 0 0.3em;
+	display: block;
+	text-align: center;
+}
+
+footer .icon {
+	width: 40px;
+}
+
+footer #copyright {
+	padding: 1em;
+}
+
+footer #copyright a {
+	font-family: 'Lato';
+	padding-left: 1em;
+	color: #389ac4;
+}
+
+footer hr {
+	margin: 0 1em;
+}
+
+footer p {
+	font-family: 'Lato';
+	color: #389ac4;
+	text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+	
+	footer #info{
+		display: block;
+	}
+	footer #view-sitemap {
+		margin: auto auto;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
